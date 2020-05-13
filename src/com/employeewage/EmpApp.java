@@ -1,7 +1,6 @@
 import java.util.Random;
 import java.io.*;
-
-class empwage
+class EmpApp
 {
 
 	public static boolean isPresent()
@@ -16,11 +15,11 @@ class empwage
 		System.out.println("Computation");
 			if(isPresent())
 			{
-				System.out.println("Present");
+			  System.out.println("Present");
 			}
 			else
 			{
-				System.out.println("Absent");
+			  System.out.println("Absent");
 			}
 		}
 }
