@@ -1,11 +1,13 @@
 import java.io.*;
 import java.util.Random;
+import java.util.Scanner;
 
 class EmpApp
 {
 	private String EmployeeName;
 	private int PerHour,workHour,DayHour,Payment;
 	public static Random rand=new Random();
+	public static Scanner sc = new Scanner(System.in);
 
 	EmpApp(int PerHour,int workHour,int DayHour)
 	{
@@ -13,6 +15,7 @@ class EmpApp
 		this.PerHour=PerHour;
 		this.workHour=workHour;
 		this.DayHour=DayHour;
+		this.calculatePayment();
 	}
 
 	public String getEmployeeName()
@@ -20,24 +23,19 @@ class EmpApp
 		return this.EmployeeName;
 	}
 
-	public void setEmployeeName(String EmployeeName)
+	public void EmployeeName(String EmployeeName)
 	{
 		this.EmployeeName=EmployeeName;
 	}
 
-	public int PerHour()
+	public int getPerHour()
 	{
 		return this.PerHour;
 	}
 
-	public void setPerHour(int input)
+	public void PerHour(int input)
 	{
 		this.PerHour=input;
-	}
-
-	public static boolean isPresent(){
-		int random=rand.nextInt(50)%2;
-		return random==1?true:false; 
 	}
 
 	public int calculatePayment()
@@ -50,19 +48,57 @@ class EmpApp
 		return this.Payment;
 	}
 
-	public static void main(String[] args)
+	public boolean isPresent()
+	{
+		if(this.workHour<1)
 		{
-		EmpApp appObj = new EmpApp(20,rand.nextInt(20),8);
-		System.out.println("Payment of Employee is "+appObj.calculatePayment());
-		System.out.println("Employee was  "+appObj.getEmployeeName());
-		System.out.println("Computation");
-			if(isPresent())
-			{
-				System.out.println("Present");
-			}
-			else
-			{
-				System.out.println("Absent");
-			}
+			return false;
 		}
+		return true;
+	}
+
+	public static void main(String[] args)
+	{
+
+ 		System.out.println("Computation");
+		EmpApp appObj=new EmpApp(20,rand.nextInt(20),8);
+
+			while(true)
+			{
+				System.out.println("1.Payment");
+				System.out.println("2.Employee");
+				System.out.println("3.present or absent");
+				System.out.println("4.Exit");
+				System.out.println("Choice is");
+				int choice = sc.nextInt();
+				System.out.println();
+
+				switch(choice)
+					{
+						case 1:
+						  System.out.println("Payment is " +appObj.calculatePayment());
+						  break;
+						case 2:
+						  System.out.println("Employee was "+appObj.getEmployeeName());
+						  break;
+						case 3:
+						  if(appObj.isPresent())
+						  {
+						   System.out.println("Present");
+						  }
+						  else
+						  {
+						   System.out.println("Absent");
+						  }
+						   break;
+						case 4:
+						  System.exit(0);
+						  break;
+					}
+
+         		}
+
+	}
+
 }
+
