@@ -3,7 +3,7 @@ import java.util.Random;
 class EmpApp
 {
 
-	private int PerHour,workHour,DayHour,payment;
+	private int PerHour,workHour,DayHour,Payment;
 	public static Random rand=new Random();
 
 	EmpApp(int PerHour,int workHour,int DayHour)
@@ -31,8 +31,8 @@ class EmpApp
 
 	public int calculatePayment()
 	{
-		this.payment=this.PerHour*this.workHour;
-		return this.payment; 
+		this.Payment=this.PerHour*this.workHour;
+		return this.Payment; 
 	}
 
 	public static void main(String[] args)
