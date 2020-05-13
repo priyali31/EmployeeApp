@@ -2,7 +2,6 @@ package com.employeewage.service;
 import java.util.InputMismatchException;
 import com.employeewage.model.Emp;
 import java.util.Random;
-import java.io.*;
 
 public class EmpApp
 {
@@ -18,26 +17,43 @@ public class EmpApp
 
 	public int calculatePayment(Emp emp)
 	{
-		if(emp.getWorkHour()<emp.DayHour())
+		emp.setPayment(emp.getPerHour()*emp.getWorkHour());
+		return emp.getPay();
+	}
+
+	public String getEmployeeName(Emp emp)
+	{
+		if((emp.getWorkHour()/20)<emp.getDayHour())
 		{
 			emp.setEmployeeName("Part time");
 		}
-		else{
-			emp.EmployeeName("Full time");
+		else
+		{
+			emp.setEmployeeName("Full time");
+		}
+		return emp.getEmployeeName();		
+	}
+
+	public int monthlyCalculatePayment(Emp emp)
+		{
+		Random rand=new Random();
+		for(int i=0;i<20;i++)
+		{
+			emp.setWorkHour(emp.getWorkHour()+rand.nextInt(20));
 		}
 		emp.setPayment(emp.getPerHour()*emp.getWorkHour());
 		return emp.getPayment();
 	}
 
-	public int monthlyCalculatePayment(Emp emp)
-	{
-		Random rand=new Random();
-		for(int i=0;i<20;i++)
+	public int hundredCalculatePayment(Emp emp)
 		{
-			emp.setWorkHour(rand.nextInt(20));
-			emp.setPayment(emp.getPayment()+(emp.getPerHour()*emp.getWorkHour()));
+		Random rand=new Random();
+		while(emp.getWorkHour()<=100)
+		{
+			emp.setWorkHour(emp.getWorkHour()+rand.nextInt(20));
 		}
-		return emp.getPaymemt();
+		emp.setPay(emp.getPerHour() * emp.getWorkHour());
+		return emp.getPayment();
 	}
 
 }
