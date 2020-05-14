@@ -3,7 +3,7 @@ import java.util.Random;
 class EmpApp
 {
 
-	private int PerHour,workHour,DayHour,Payment;
+	private int perHour,workHour,dayHour,payment;
 	public static Random rand=new Random();
 
 	EmpApp(int PerHour,int workHour,int DayHour)
@@ -15,12 +15,12 @@ class EmpApp
 
 	public int PerHour()
 	{
-		return this.PerHour;
+		return this.perHour;
 	}
 
 	public void setPerHour(int input)
 	{
-		this.PerHour=input;
+		this.perHour=input;
 	}
 
 	public static boolean isPresent()
@@ -31,8 +31,8 @@ class EmpApp
 
 	public int calculatePayment()
 	{
-		this.Payment=this.PerHour*this.workHour;
-		return this.Payment; 
+		this.payment=this.perHour*this.workHour;
+		return this.payment; 
 	}
 
 	public static void main(String[] args)
