@@ -1,6 +1,6 @@
 package com.employeewage.service;
 import com.employeewage.model.Emp;
-
+import com.employee.service.EmpService;
 public interface EmpService
 {
 

@@ -1,10 +1,7 @@
 package com.employeewage.test;
 import java.io.*;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.InputMismatchException;
-import com.employeewage.model.Emp;
-import com.employeewage.service.EmpApp;
+import com.employeewage.model.*;
+import com.employeewage.service.*;
 
 class test
 	{
