@@ -1,5 +1,4 @@
 package com.employeewage.service;
-import java.util.InputMismatchException;
 import com.employeewage.model.Emp;
 import java.util.Random;
 import java.io.*;
