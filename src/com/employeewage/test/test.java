@@ -2,12 +2,11 @@ package com.employeewage.test;
 import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 import com.employeewage.model.Emp;
 import com.employeewage.service.EmpApp;
 
 class test
-	{
+{
 
 	public static int testTest()
 	{
@@ -25,7 +24,7 @@ class test
 
 	public static void main(String[] args)
 	{
-		try{
+		
 			System.out.println("Computation Program");
 			Random rand= new Random();
 			EmployeeApp app= new EmployeeApp();
@@ -56,11 +55,7 @@ class test
 					break;
 					}
 
-				}
-			}catch(InputMismatchException e)
-				{
-				System.out.println("Wrong Number");
-		                }		
+				}	
 		}
-	}	
+
 }
