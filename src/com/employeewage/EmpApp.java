@@ -3,36 +3,36 @@ import java.util.Random;
 
 class EmpApp
 {
-	private String EmployeeName;
-	private int PerHour,workHour,DayHour,Payment;
+	private String employeeName;
+	private int perHour,workHour,dayHour,payment;
 	public static Random rand=new Random();
 
-	EmpApp(int PerHour,int workHour,int DayHour)
+	EmpApp(int perHour,int workHour,int dayHour)
 	{
 		this.setEmployeeName("Full time");
-		this.PerHour=PerHour;
+		this.perHour=perHour;
 		this.workHour=workHour;
-		this.DayHour=DayHour;
+		this.dayHour=dayHour;
 	}
 
 	public String getEmployeeName()
 	{
-		return this.EmployeeName;
+		return this.employeeName;
 	}
 
-	public void setEmployeeName(String EmployeeName)
+	public void setEmployeeName(String employeeName)
 	{
-		this.EmployeeName=EmployeeName;
+		this.employeeName=employeeName;
 	}
 
 	public int PerHour()
 	{
-		return this.PerHour;
+		return this.perHour;
 	}
 
 	public void setPerHour(int input)
 	{
-		this.PerHour=input;
+		this.perHour=input;
 	}
 
 	public static boolean isPresent(){
@@ -46,8 +46,8 @@ class EmpApp
 		{
 			this.setEmployeeName("Part time");
 		}
-		this.Payment=this.PerHour*this.workHour;
-		return this.Payment;
+		this.payment=this.perHour*this.workHour;
+		return this.payment;
 	}
 
 	public static void main(String[] args)
