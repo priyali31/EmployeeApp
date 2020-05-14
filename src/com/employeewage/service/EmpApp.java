@@ -1,5 +1,4 @@
 package com.employeewage.service;
-import java.util.InputMismatchException;
 import com.employeewage.model.Emp;
 import java.util.Random;
 
@@ -52,7 +51,7 @@ public class EmpApp
 		{
 			emp.setWorkHour(emp.getWorkHour()+rand.nextInt(20));
 		}
-		emp.setPay(emp.getPerHour() * emp.getWorkHour());
+		emp.setPayment(emp.getPerHour() * emp.getWorkHour());
 		return emp.getPayment();
 	}
 
